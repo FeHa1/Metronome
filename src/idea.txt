@@ -1,0 +1,9 @@
+La idea del metronomo es que cumpla con las características propias de un metrónomo como contar el tempo y moverse por distintos pulsos de 
+compas (marcados con las figuras corresponidentes, como negras, corcheas, trecillos, semicorcheas, etc). 
+
+#Lo que quiero agregar es: 
+-que pueda saltar tempos de 5 en 5 o de 10 en 10. Ej: estoy tocando un ejercicio en a 40 bpm pero ahora quiero tocar otro en 120, pasando
+los bpm de 10 en 10 seria muy util, en lugar de andar subiendo el tempo con una ruedita todo el rato. 
+-que puedas elegir la cantidad de compases de silencio. Ej: que puedas tocar 1 compas de 4/4 y despues haya un compas entero de silencio para
+despues volver al compas de 4/4. Ésto para practicar el tempo y ver que tan bien esta el metrónomo interno. 
+
