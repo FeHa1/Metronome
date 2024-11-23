@@ -6,7 +6,7 @@ Being a musician, I've been searching for a metronome that goes beyond what onli
 
 # Usage
 * Space: Play/Pause
-* Left/Right: Tempo Down/Up 10
+* Left/Right: Tempo Down/Up 5
 * Up/Down: Tempo Down/Up 1
 * T: Tap Estimate
 * M: Change Time Signature Mode
