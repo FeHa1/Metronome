@@ -1,10 +1,11 @@
 import tkinter as tk
 from tkinter import Frame
-import simpleaudio, time, os
+import pygame, time, os
 
+pygame.mixer.init()
 basedir = os.path.dirname(__file__)
-strong_beat = simpleaudio.WaveObject.from_wave_file(os.path.join(basedir,'strong_beat.wav'))
-weak_beat = simpleaudio.WaveObject.from_wave_file(os.path.join(basedir,'weak_beat.wav'))
+strong_beat = pygame.mixer.Sound(os.path.join(basedir,'strong_beat.wav'))
+weak_beat = pygame.mixer.Sound(os.path.join(basedir,'weak_beat.wav'))
 
 # GUI
 theme_colors = {'bg': '#52767D', 'text':'#FFFFE6', 'label_bg':'#3D998D', 'scale_through':'#A3CEC5'}
@@ -82,12 +83,11 @@ scale_var = tk.IntVar(midFrame)
 
 # Function to determine the tempo markings
 def tempo_markirng_of(tempo):
-    for key in marking.keys():
-        if tempo >= marking[key][0] and tempo <= marking[key][1]: 
+    marking = ''
+    for key in markings.keys():
+        if tempo >= markings[key][0] and tempo <= markings[key][1]: 
             marking = key
-            break 
-        else: 
-            marking = ''
+            break
     
     return marking
 
@@ -132,7 +132,7 @@ def update_time_signature(*args):
     time_signature = time_signatures[ts_mode.get()][-1]
     interval_ms = int((60/tempo) * (4/time_signature[-1]) * 1000)
     count = 0
-ts_mode.trace('w', update_time_signature)
+ts_mode.trace_add('write', update_time_signature)
 
 
 # Time signature selection implementation
@@ -233,5 +233,4 @@ window.bind('<Right>', arrow_right)
 
 window.after(interval_ms, play)
 window.mainloop()
-
 
